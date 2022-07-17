@@ -21,10 +21,10 @@ func main() {
 	// 	UploadUrlTimeoutSec: 1000,
 	// })
 	// res, err := c.GetBlob(ctx, &blobpb.GetBlobRequest{
-	// 	Id: "5f955ed5990a93a381d82050",
+	// 	Id: "62d3c8ec5f6b6ace68b116c1",
 	// })
 	res, err := c.GetBlobURL(ctx, &blobpb.GetBlobURLRequest{
-		Id:         "5f955ed5990a93a381d82050",
+		Id:         "62d3c8ec5f6b6ace68b116c1",
 		TimeoutSec: 100,
 	})
 	if err != nil {

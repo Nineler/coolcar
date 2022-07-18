@@ -55,7 +55,7 @@ Page({
         mainItems: [] as MainItemQueryResult[],
     },
 
-    layoutResolver: undefined as (()=>void)|undefined,
+    layoutResolver: undefined as (()=>void)|undefined|any,
 
     data: {
         promotionItems: [

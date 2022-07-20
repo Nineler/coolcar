@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: car
-        image: ccr.ccs.tencentyun.com/kucar/car:1.0
+        image: ccr.ccs.tencentyun.com/bigcar/car:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8081

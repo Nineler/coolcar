@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: rental
-        image: ccr.ccs.tencentyun.com/kucar/rental:1.0
+        image: ccr.ccs.tencentyun.com/bigcar/rental:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8081

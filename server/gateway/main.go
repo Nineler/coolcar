@@ -14,6 +14,7 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/namsral/flag"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 var addr = flag.String("addr", ":8080", "address to listen")
@@ -75,13 +76,17 @@ func main() {
 	for _, s := range serverConfig {
 		err := s.registerFunc(
 			c, mux, s.addr,
-			[]grpc.DialOption{grpc.WithInsecure()},
+			[]grpc.DialOption{grpc.WithTransportCredentials(insecure.NewCredentials())},
 		)
 		if err != nil {
 			lg.Sugar().Fatalf("cannot register service %s: %v", s.name, err)
 		}
 	}
+	http.HandleFunc("/healthz", func(rw http.ResponseWriter, r *http.Request) {
+		rw.Write([]byte("ok"))
+	})
 
+	http.Handle("/", mux)
 	lg.Sugar().Infof("grpc gateway started at %s", *addr)
-	lg.Sugar().Fatal(http.ListenAndServe(*addr, mux))
+	lg.Sugar().Fatal(http.ListenAndServe(*addr, nil))
 }

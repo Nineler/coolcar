@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: blob
-        image: ccr.ccs.tencentyun.com/kucar/blob:1.0
+        image: ccr.ccs.tencentyun.com/bigcar/blob:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8081

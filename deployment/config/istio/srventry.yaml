@@ -18,7 +18,7 @@ metadata:
   name: cos
 spec:
   hosts:
-  - https://coolcar-1302266035.cos.ap-chengdu.myqcloud.com
+  - coolcar-1302266035.cos.ap-chengdu.myqcloud.com
   ports:
   - number: 443
     name: https

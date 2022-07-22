@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: auth
-        image: ccr.ccs.tencentyun.com/bigcar/auth:1.1
+        image: ccr.ccs.tencentyun.com/bigcar/auth:1.2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8081
